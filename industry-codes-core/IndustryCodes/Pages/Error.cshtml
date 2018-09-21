@@ -1,0 +1,60 @@
+﻿@{
+    var viewModel = ViewData["ViewModel"] as IndustryCodes.ViewModels.ErrorViewModel;
+}
+
+<h3>Application Error</h3>
+
+<div class="jumbotron">
+    @if (!string.IsNullOrEmpty(viewModel?.ExceptionName))
+    {
+
+        <div class="row">
+            <p class="text-danger">
+                <small>
+                    <label class="control-label">Exception Name</label>:&nbsp;
+                    @viewModel.ExceptionName
+                </small>
+            </p>
+        </div>
+        <div class="row">
+            <p class="text-primary">
+                <small>
+                    <label class="control-label">Exception Message</label>:&nbsp;
+                    @viewModel.ExceptionMessage
+                </small>
+            </p>
+        </div>
+        if (!string.IsNullOrEmpty(viewModel?.ExceptionSourceMessage))
+        {
+            <div class="row">
+                <p class="text-primary">
+                    <small>
+                        <label class="control-label">Exception Source Message</label>:&nbsp;
+                        @viewModel.ExceptionSourceMessage
+                    </small>
+                </p>
+            </div>
+        }
+        if (!string.IsNullOrEmpty(viewModel?.RequestId))
+        {
+            <div class="row">
+                <p class="text-primary">
+                    <small>
+                        <label class="control-label">Request ID</label>:&nbsp;
+                        @viewModel.RequestId
+                    </small>
+                </p>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="row">
+            <p class="text-primary">
+                <small>
+                    Unknow exception
+                </small>
+            </p>
+        </div>
+    }
+</div>

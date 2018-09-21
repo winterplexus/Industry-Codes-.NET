@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Application Error";
+}
+
+@model IndustryCodes.ViewModels.ErrorViewModel
+
+<h3>@ViewBag.Title</h3>
+
+<div class="jumbotron">
+    <div class="row">
+        <p class="text-danger">
+            <small>
+                <strong>@Html.LabelFor(m => m.ExceptionType):</strong>&nbsp;@Html.DisplayFor(m => m.ExceptionType)
+            </small>
+        </p>
+    </div>
+
+    <div class="row">
+        <p class="text-primary">
+            <small>
+                <strong>@Html.LabelFor(m => m.ExceptionMessage):</strong>&nbsp;@Html.DisplayFor(m => m.ExceptionMessage)
+            </small>
+        </p>
+    </div>
+
+    <div class="row">
+        <p class="text-primary">
+            <small>
+                <strong>@Html.LabelFor(m => m.InnerExceptionMessage):</strong>&nbsp;@Html.DisplayFor(m => m.InnerExceptionMessage)
+            </small>
+        </p>
+    </div>
+</div>                             

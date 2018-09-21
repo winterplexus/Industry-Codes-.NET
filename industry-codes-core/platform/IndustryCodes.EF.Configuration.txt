@@ -1,0 +1,59 @@
+
+Entity Framework - Database First
+========================================================================================================================
+Options to create database model:
+
+Via CLI ................................................................................................................
+
+Step A:
+------------------------------------------------------------------------------------------------------------------------
+Install following packages in project root folder:
+
+> dotnet add package Microsoft.EntityFrameworkCore.Design --version 2.0.3
+> dotnet add package Microsoft.EntityFrameworkCore --version 2.0.3 
+> dotnet add package Microsoft.EntityFrameworkCore.SqlServer.Design --version 2.0.3 
+> dotnet add package Microsoft.EntityFrameworkCore.Tools --version 2.0.3 
+> dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet --version 2.0.3 
+
+Step B:
+------------------------------------------------------------------------------------------------------------------------
+Add following to <ProjectName>.csproj file:
+
+<ItemGroup>   
+  <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
+</ItemGroup>
+
+Step C:
+------------------------------------------------------------------------------------------------------------------------
+> dotnet restore
+> dotnet ef
+
+Step D:
+------------------------------------------------------------------------------------------------------------------------
+dotnet ef dbcontext scaffold "Server=.\SQLEXPRESS;Database=Industry Codes;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c IndustryCodesContext
+
+Via NUGET ..............................................................................................................
+
+Step A:
+------------------------------------------------------------------------------------------------------------------------
+Use Package Manager Console:
+
+Tools –> NuGet Package Manager –> Package Manager Console
+
+> Install-Package Microsoft.EntityFrameworkCore.Tools
+> Install-Package Microsoft.EntityFrameworkCore.SqlServer.Design
+
+Under Nuget Dependencies:
+
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools  
+Microsoft.EntityFrameworkCore.SqlServer.Design
+
+Step B:
+------------------------------------------------------------------------------------------------------------------------
+Use Package Manager Console:
+
+Tools –> NuGet Package Manager –> Package Manager Console
+
+> Scaffold-DbContext "Server=.\SQLEXPRESS;Database=Industry Codes;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context IndustryCodesContext

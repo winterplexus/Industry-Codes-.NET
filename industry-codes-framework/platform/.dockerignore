@@ -1,0 +1,13 @@
+*
+!bin
+!Content
+!fonts
+!Images
+!Scripts
+!Views
+!ApplicationInsights.config
+!Bundle.config
+!favicon.ico
+!Global.asax
+!packages.config
+!Web.config

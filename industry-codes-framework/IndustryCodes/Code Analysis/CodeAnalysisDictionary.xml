@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- CodeAnalysisDictionary.xml -->
+<Dictionary>
+    <Words>
+        <Recognized>
+            <Word>Mvc</Word>
+            <Word>NAICS</Word>
+            <Word>SIC</Word>
+        </Recognized>
+        <DiscreteExceptions>
+            <Term>Mvc</Term>
+            <Term>NAICS</Term>
+            <Term>SIC</Term>
+        </DiscreteExceptions>
+    </Words>
+    <Acronyms>
+        <CasingExceptions>
+            <Acronym>Mvc</Acronym>
+            <Acronym>NAICS</Acronym>
+            <Acronym>SIC</Acronym>
+        </CasingExceptions>
+    </Acronyms>
+</Dictionary>

@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+@model IndustryCodes.ViewModels.AboutViewModel
+
+<h3>@ViewBag.Title</h3>
+
+<div class="jumbotron">
+    <div class="row">
+        <p class="text-primary">
+            <small>
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><strong>@Html.LabelFor(m => m.Application):</strong>&nbsp;@Html.DisplayFor(m => m.Application)<br />
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><strong>@Html.LabelFor(m => m.Description):</strong>&nbsp;@Html.DisplayFor(m => m.Description)<br />
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><strong>@Html.LabelFor(m => m.Version):</strong>&nbsp;@Html.DisplayFor(m => m.Version)
+            </small>
+        </p>
+    </div>
+
+    <div class="row">
+        <p>
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><img src="../Images/wiregrass.png" height="55" width="180" alt="Wiregrass Code Technology Symbol" />
+        </p>
+    </div>
+
+    <div class="row">
+        <p class="text-success">
+            <small>
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10">@Html.DisplayTextFor(m => m.Copyright)
+            </small>
+        </p>
+    </div>
+</div>                    

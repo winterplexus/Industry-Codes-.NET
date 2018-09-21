@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IndustryCodes.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ClassificationCodes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INDUSTRY_SECTOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="INDUSTRY_SUBSECTOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="NORTH_AMERICAN_CODE" Type="int" />
+          <Property Name="NORTH_AMERICAN_DESCRIPTION" Type="nvarchar" MaxLength="255" />
+          <Property Name="STANDARD_CODE" Type="int" />
+          <Property Name="STANDARD_DESCRIPTION" Type="nvarchar" MaxLength="255" />
+          <Property Name="KIND_CODE" Type="int" />
+          <Property Name="KIND_CODE_DESCRIPTION" Type="nvarchar" MaxLength="255" />
+          <Property Name="NORTH_AMERICAN_CODE_2002" Type="int" />
+          <Property Name="NORTH_AMERICAN_DESCRIPTION_2002" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="IndustryCodesStoreContainer">
+          <EntitySet Name="ClassificationCodes" EntityType="Self.ClassificationCodes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IndustryCodes" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="IndustryCodesContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClassificationCodes" EntityType="IndustryCodes.ClassificationCode" />
+        </EntityContainer>
+        <EntityType Name="ClassificationCode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INDUSTRY_SECTOR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="INDUSTRY_SUBSECTOR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NORTH_AMERICAN_CODE" Type="Int32" />
+          <Property Name="NORTH_AMERICAN_DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="STANDARD_CODE" Type="Int32" />
+          <Property Name="STANDARD_DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="KIND_CODE" Type="Int32" />
+          <Property Name="KIND_CODE_DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NORTH_AMERICAN_CODE_2002" Type="Int32" />
+          <Property Name="NORTH_AMERICAN_DESCRIPTION_2002" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IndustryCodesStoreContainer" CdmEntityContainer="IndustryCodesContext">
+          <EntitySetMapping Name="ClassificationCodes">
+            <EntityTypeMapping TypeName="IndustryCodes.ClassificationCode">
+              <MappingFragment StoreEntitySet="ClassificationCodes">
+                <ScalarProperty Name="NORTH_AMERICAN_DESCRIPTION_2002" ColumnName="NORTH_AMERICAN_DESCRIPTION_2002" />
+                <ScalarProperty Name="NORTH_AMERICAN_CODE_2002" ColumnName="NORTH_AMERICAN_CODE_2002" />
+                <ScalarProperty Name="KIND_CODE_DESCRIPTION" ColumnName="KIND_CODE_DESCRIPTION" />
+                <ScalarProperty Name="KIND_CODE" ColumnName="KIND_CODE" />
+                <ScalarProperty Name="STANDARD_DESCRIPTION" ColumnName="STANDARD_DESCRIPTION" />
+                <ScalarProperty Name="STANDARD_CODE" ColumnName="STANDARD_CODE" />
+                <ScalarProperty Name="NORTH_AMERICAN_DESCRIPTION" ColumnName="NORTH_AMERICAN_DESCRIPTION" />
+                <ScalarProperty Name="NORTH_AMERICAN_CODE" ColumnName="NORTH_AMERICAN_CODE" />
+                <ScalarProperty Name="INDUSTRY_SUBSECTOR" ColumnName="INDUSTRY_SUBSECTOR" />
+                <ScalarProperty Name="INDUSTRY_SECTOR" ColumnName="INDUSTRY_SECTOR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
