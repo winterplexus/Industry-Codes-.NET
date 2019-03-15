@@ -4,13 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title - Industry Codes</title>
-
     @Styles.Render("~/Content/css")
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/modernizr")
-
     <script type="text/javascript">
         $(function () {
             $(window).scroll(function () {
@@ -28,50 +25,41 @@
     </script>
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Industry Codes", "Index", "Home", null, new { @class = "navbar-brand" })
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown" title="Search NAICS/SIC Codes">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li title="Search SIC Code Using NAICS Code">@Html.ActionLink("By Code", "SearchByCode", "SearchByCode")</li>
-                            <li title="Search NAICS/SIC Codes By Selection">@Html.ActionLink("By Selection", "SearchBySelection", "SearchBySelection")</li>
-                            <li title="Search NAICS/SIC Codes By Keyword">@Html.ActionLink("By Keyword", "SearchByKeyword", "SearchByKeyword")</li>
-                        </ul>
+            @Html.ActionLink("Industry Codes", "Index", "Home", null, new { @class = "navbar-brand", title = "Home" })
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download_1" title="Search NAICS/SIC codes">Search<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="download" asp-page="/SearchByd">
+                            <a class="dropdown-item" href="~/SearchByCode/SearchByCode" data-toggle="tooltip" title="Search SIC code using NAICS code">By Code</a>
+                            <a class="dropdown-item" href="~/SearchBySelection/SearchBySelection" data-toggle="tooltip" title="Search NAICS/SIC codes by selection">By Selection</a>
+                            <a class="dropdown-item" href="~/SearchByKeyword/SearchByKeyword" data-toggle="tooltip" title="Search NAICS/SIC codes By keyword">By Keyword</a>
+                        </div>
                     </li>
-
-                    <li class="dropdown" title="Search External Resources">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">External<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li title="NAICS North American Industry Classification System (NAICS) Search - US Census"><a href="https://www.census.gov/eos/www/naics/" target="_blank">NAICS Site (Census)</a></li>
-                            <li title="Standard Industrial Classification (SIC) System Search - US Occupational Safety and Health Administration (OSHA)"><a href="https://www.osha.gov/pls/imis/sicsearch.html" target="_blank">SIC Site (OSHA)</a></li>
-                        </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download_2" title="Search external resources">External<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="download">
+                            <a class="dropdown-item" href="https://www.census.gov/eos/www/naics/" target="_blank" data-toggle="tooltip" title="NAICS North American Industry Classification System (NAICS) Search - US Census">NAICS Site (Census)</a>
+                            <a class="dropdown-item" href="https://www.osha.gov/pls/imis/sicsearch.html" target="_blank" data-toggle="tooltip" title="Standard Industrial Classification (SIC) System Search - US Occupational Safety and Health Administration (OSHA)">SIC Site (OSHA)</a>
+                        </div>
                     </li>
-
-                    <li title="About Application">@Html.ActionLink("About", "About", "About")</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/About/About">About</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-
     <div class="container body-content">
         @RenderBody()
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-
     @RenderSection("scripts", required: false)
 </body>
 </html>      

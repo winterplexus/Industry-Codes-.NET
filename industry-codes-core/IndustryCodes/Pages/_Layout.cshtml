@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Industry Codes</title>
-
     <environment include="Production">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -15,47 +14,39 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-page="/Index" class="navbar-brand">Industry Codes</a>
-            </div>
-
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown" title="Search NAICS/SIC Codes">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li title="Search SIC Code Using NAICS Code"><a asp-page="/SearchByCode">By Code</a></li>
-                            <li title="Search NAICS/SIC Codes By Selection"><a asp-page="/SearchBySelection">By Selection</a></li>
-                            <li title="Search NAICS/SIC Codes By Keyword"><a asp-page="/SearchByKeyword">By Keyword</a></li>
-                        </ul>
+            <a asp-page="/Index" class="navbar-brand" data-toggle="tooltip" title="Home">Industry Codes</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download_1" title="Search NAICS/SIC codes">Search<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="download">
+                            <a class="dropdown-item" asp-page="/SearchByCode" data-toggle="tooltip" title="Search SIC code using NAICS code">By Code</a>
+                            <a class="dropdown-item" asp-page="/SearchBySelection" data-toggle="tooltip" title="Search NAICS/SIC codes by selection">By Selection</a>
+                            <a class="dropdown-item" asp-page="/SearchByKeyword" data-toggle="tooltip" title="Search NAICS/SIC codes By keyword">By Keyword</a>
+                        </div>
                     </li>
-
-                    <li class="dropdown" title="Search External Resources">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">External<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li title="NAICS North American Industry Classification System (NAICS) Search - US Census"><a href="https://www.census.gov/eos/www/naics/" target="_blank">NAICS Site (Census)</a></li>
-                            <li title="Standard Industrial Classification (SIC) System Search - US Occupational Safety and Health Administration (OSHA)"><a href="https://www.osha.gov/pls/imis/sicsearch.html" target="_blank">SIC Site (OSHA)</a></li>
-                        </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download_2" title="Search external resources">External<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="download">
+                            <a class="dropdown-item" href="https://www.census.gov/eos/www/naics/" target="_blank" data-toggle="tooltip" title="NAICS North American Industry Classification System (NAICS) Search - US Census">NAICS Site (Census)</a>
+                            <a class="dropdown-item" href="https://www.osha.gov/pls/imis/sicsearch.html" target="_blank" data-toggle="tooltip" title="Standard Industrial Classification (SIC) System Search - US Occupational Safety and Health Administration (OSHA)">SIC Site (OSHA)</a>
+                        </div>
                     </li>
-
-                    <li><a asp-page="/About">About</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/About">About</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
-
+    </div>
     <div class="container body-content">
         @RenderBody()
     </div>
-
     <environment include="Production">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -66,7 +57,6 @@
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
-
     <script type="text/javascript">
         $(function () {
             $(window).scroll(function () {
@@ -82,7 +72,6 @@
             });
         });
     </script>
-
     @RenderSection("Scripts", required: false)
 </body>
 </html>                          

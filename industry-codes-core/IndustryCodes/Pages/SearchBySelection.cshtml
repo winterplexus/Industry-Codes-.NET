@@ -1,25 +1,24 @@
 ﻿@page
 @model SearchBySelectionModel
 @{
-    ViewData["Title"] = "Search NAICS/SIC Codes By Selection";
+    ViewData["Title"] = "Search By Selection";
 }
 
 <section id="messages">
     @Html.ValidationMessage("ErrorMessage")
 </section>
 
-<section id="selectionform">
-    <br />
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title" contenteditable="true">@ViewBag.Title</h3>
-        </div>
+<br />
+<h4>@ViewBag.Title</h4>
 
-        <div class="panel-body">
+<section id="selection_form">
+    <div class="card border-dark mb-3" style="min-width: 20rem;">
+        <div class="card-header text-white bg-primary">Search NAICS/SIC Codes By Selection</div>
+        <div class="card-body">
             <form method="post" role="form">
                 <div class="row">
                     <div class="col-sm-2">
-                        <label asp-for="ViewModel.IndustrySectors" class="control-label"></label>:
+                        <label asp-for="ViewModel.IndustrySectors"></label>:
                     </div>
                     <div class="col-sm-8">
                         <select asp-for="ViewModel.SelectedIndustrySector" asp-items="@Model.ViewModel.IndustrySectors" style="width:90%" onchange="this.form.submit();" title="Select a industry sector description item"></select>
@@ -28,7 +27,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-2">
-                        <label asp-for="ViewModel.IndustrySubsectors" class="control-label"></label>:
+                        <label asp-for="ViewModel.IndustrySubsectors"></label>:
                     </div>
                     <div class="col-sm-8">
                         <select asp-for="ViewModel.SelectedIndustrySubsector" asp-items="@Model.ViewModel.IndustrySubsectors" style="width:90%" onchange="this.form.submit();" title="Select a industry subsector description item"></select>
@@ -37,7 +36,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-2">
-                        <label asp-for="ViewModel.NAICSDescriptions" class="control-label"></label>:
+                        <label asp-for="ViewModel.NAICSDescriptions"></label>:
                     </div>
                     <div class="col-sm-8">
                         <select asp-for="ViewModel.SelectedNAICSDescription" asp-items="@Model.ViewModel.NAICSDescriptions" style="width:90%" onchange="this.form.submit();" title="Select a NAICS description item"></select>
@@ -46,56 +45,36 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-2">
-                        <label asp-for="ViewModel.SICDescriptions" class="control-label"></label>:
+                        <label asp-for="ViewModel.SICDescriptions"></label>:
                     </div>
                     <div class="col-sm-8">
                         <select asp-for="ViewModel.SelectedSICDescription" asp-items="@Model.ViewModel.SICDescriptions" style="width:90%" onchange="this.form.submit();" title="Select a SIC description item"></select>
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
-
                 <br />
-
-                <div class="well well-sm">
-                    <table class="table table-striped table-condensed">
-                        <thead></thead>
-                        <tbody>
-                            <tr>
-                                <td class="col-sm-2">
-                                    <label asp-for="ViewModel.NAICSCode" class="control-label"></label>:
-                                </td>
-                                <td class="col-sm-10">
-                                    @Model.ViewModel.NAICSCode
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-sm-2">
-                                    <label asp-for="ViewModel.NAICSDescription" class="control-label"></label>:
-                                </td>
-                                <td class="col-sm-10">
-                                    @Model.ViewModel.NAICSDescription
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-sm-2">
-                                    <label asp-for="ViewModel.SICCode" class="control-label"></label>:
-                                </td>
-                                <td class="col-sm-10">
-                                    @Model.ViewModel.SICCode
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-sm-2">
-                                    <label asp-for="ViewModel.SICDescription" class="control-label"></label>:
-                                </td>
-                                <td class="col-sm-10">
-                                    @Model.ViewModel.SICDescription
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
+                @if (!string.IsNullOrEmpty(Model.ViewModel.NAICSCode))
+                {
+                    <div class="card border-0 p-2">
+                        <div class="row">
+                            <div class="col-sm-4" style="background-color: gainsboro"><label asp-for="ViewModel.NAICSCode"></label>:</div>
+                            <div class="col-sm-8">@Model.ViewModel.NAICSCode</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4" style="background-color: gainsboro"><label asp-for="ViewModel.NAICSDescription"></label>:</div>
+                            <div class="col-sm-8">@Model.ViewModel.NAICSDescription</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4" style="background-color: gainsboro"><label asp-for="ViewModel.SICCode"></label>:</div>
+                            <div class="col-sm-8">@Model.ViewModel.SICCode</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4" style="background-color: gainsboro"><label asp-for="ViewModel.SICDescription"></label>:</div>
+                            <div class="col-sm-8">@Model.ViewModel.SICDescription</div>
+                        </div>
+                    </div>
+                    <br />
+                }
                 <div class="row">
                     <div class="col-sm-1">
                         <input type="submit" name="ClearButton" value="Clear" class="btn btn-primary btn-sm" title="Clear selections and search output" />
@@ -106,7 +85,6 @@
         </div>
     </div>
 </section>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

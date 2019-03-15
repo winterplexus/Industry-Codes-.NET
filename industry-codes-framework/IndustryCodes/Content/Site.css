@@ -1,18 +1,4 @@
-﻿body {
-    padding-top: 70px;
-    padding-bottom: 20px;
-}
-
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-input, select, textarea {
-    max-width: 280px;
-}
-
-.field-validation-error {
+﻿.field-validation-error {
     color: #b94a48;
 }
 
@@ -40,10 +26,6 @@ small {
     font-size: 70%;
 }
 
-.row {
-    margin-top: 1px;
-}
-
 #to-page-top {
     padding: 5px 3px;
     background: #000;
@@ -53,4 +35,4 @@ small {
     right: 5px;
     display: none;
     cursor: pointer;
-}
+}           

@@ -1,25 +1,21 @@
-﻿@{
-    ViewBag.Title = "Search NAICS/SIC Codes By Selection";
+﻿@model IndustryCodes.ViewModels.SearchBySelectionViewModel
+@{
+    ViewBag.Title = "Search By Selection";
 }
-
-@model IndustryCodes.ViewModels.SearchBySelectionViewModel
 
 <section id="messages">
     @Html.ValidationMessage("ErrorMessage")
 </section>
 
-<section id="selectionform">
-    <br />            
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title" contenteditable="true">@ViewBag.Title</h3>
-        </div> 
-        <div class="panel-body">
+<br />
+<h4>@ViewBag.Title</h4>
+
+<section id="selection_form">
+    <div class="card border-dark mb-3" style="min-width: 20rem;">
+        <div class="card-header text-white bg-primary">Search NAICS/SIC Codes By Selection</div>
+        <div class="card-body">
             @using (Html.BeginForm("SearchBySelection", "SearchBySelection", FormMethod.Post))
             {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true)
-
                 <div class="row">
                     <div class="col-sm-2">
                         @Html.LabelFor(m => m.IndustrySectors):
@@ -28,7 +24,7 @@
                         @Html.DropDownListFor(m => m.SelectedIndustrySector, Model.IndustrySectors, new { style = "width: 600px;", onchange = "this.form.submit();", title = "Select a industry sector description item" })
                     </div>
                     <div class="col-sm-2"></div>
-                </div>      
+                </div>
                 <div class="row">
                     <div class="col-sm-2">
                         @Html.LabelFor(m => m.IndustrySubsectors):
@@ -37,7 +33,7 @@
                         @Html.DropDownListFor(m => m.SelectedIndustrySubsector, Model.IndustrySubsectors, new { style = "width: 600px;", onchange = "this.form.submit();", title = "Select a industry subsector description item" })
                     </div>
                     <div class="col-sm-2"></div>
-                </div>          
+                </div>
                 <div class="row">
                     <div class="col-sm-2">
                         @Html.LabelFor(m => m.NAICSDescriptions):
@@ -46,7 +42,7 @@
                         @Html.DropDownListFor(m => m.SelectedNAICSDescription, Model.NAICSDescriptions, new { style = "width: 600px;", onchange = "this.form.submit();", title = "Select a NAICS description item" })
                     </div>
                     <div class="col-sm-2"></div>
-                </div>      
+                </div>
                 <div class="row">
                     <div class="col-sm-2">
                         @Html.LabelFor(m => m.SICDescriptions):
@@ -55,47 +51,30 @@
                         @Html.DropDownListFor(m => m.SelectedSICDescription, Model.SICDescriptions, new { style = "width: 600px;", onchange = "this.form.submit();", title = "Select a SIC description item" })
                     </div>
                     <div class="col-sm-2"></div>
-                </div>     
-                <br />    
-                <div class="well well-sm">
-                    <table class="table table-striped table-condensed">
-                        <thead></thead>
-                        <tbody>
-                            <tr>
-                                <td class="col-sm-2">
-                                    @Html.LabelFor(m => m.NAICSCode):
-                                </td>
-                                <td class="col-sm-10">
-                                    @Html.DisplayTextFor(m => m.NAICSCode)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-sm-2">
-                                    @Html.LabelFor(m => m.NAICSDescription):
-                                </td>
-                                <td class="col-sm-10">
-                                    @Html.DisplayTextFor(m => m.NAICSDescription)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-sm-2">
-                                    @Html.LabelFor(m => m.SICCode):
-                                </td>
-                                <td class="col-sm-10">
-                                    @Html.DisplayTextFor(m => m.SICCode)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-sm-2">
-                                    @Html.LabelFor(m => m.SICDescription):
-                                </td>
-                                <td class="col-sm-10">
-                                    @Html.DisplayTextFor(m => m.SICDescription)
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>       
+                </div>
+                <br />
+                if (!string.IsNullOrEmpty(Model.NAICSCode))
+                {
+                    <div class="card border-0 p-2">
+                        <div class="row">
+                            <div class="col-sm-4" style="background-color: gainsboro">@Html.LabelFor(m => m.NAICSCode):</div>
+                            <div class="col-sm-8">@Html.DisplayTextFor(m => m.NAICSCode)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4" style="background-color: gainsboro">@Html.LabelFor(m => m.NAICSDescription):</div>
+                            <div class="col-sm-8">@Html.DisplayTextFor(m => m.NAICSDescription)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4" style="background-color: gainsboro">@Html.LabelFor(m => m.SICCode):</div>
+                            <div class="col-sm-8">@Html.DisplayTextFor(m => m.SICCode)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4" style="background-color: gainsboro">@Html.LabelFor(m => m.SICDescription):</div>
+                            <div class="col-sm-8">@Html.DisplayTextFor(m => m.SICDescription)</div>
+                        </div>
+                    </div>
+                    <br />
+                }
                 <div class="row">
                     <div class="col-sm-1">
                         <input type="submit" name="ClearButton" value="Clear" class="btn btn-primary btn-sm" title="Clear selections and search output" />

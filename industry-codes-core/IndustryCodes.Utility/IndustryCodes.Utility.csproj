@@ -1,19 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <Description>Search NAICS (North American Industry Classification System) or SIC (Standard Industrial Classification) codes: utility library.</Description>
     <Product>Industry Codes</Product>
-    <Copyright>Copyright © 2018 Wiregrass Code Technology</Copyright>
+    <Copyright>Copyright © 2018-2019 Wiregrass Code Technology</Copyright>
     <Company>Wiregrass Code Technology</Company>
     <Authors>Wiregrass Code Technology</Authors>
-    <Version>4.0.0</Version>
+    <Version>2.0</Version>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>NameKey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

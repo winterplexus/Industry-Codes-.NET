@@ -1,33 +1,19 @@
-﻿@{
+﻿@model IndustryCodes.ViewModels.ErrorViewModel
+@{
     ViewBag.Title = "Application Error";
 }
 
-@model IndustryCodes.ViewModels.ErrorViewModel
-
+<br />
 <h3>@ViewBag.Title</h3>
 
 <div class="jumbotron">
     <div class="row">
-        <p class="text-danger">
-            <small>
-                <strong>@Html.LabelFor(m => m.ExceptionType):</strong>&nbsp;@Html.DisplayFor(m => m.ExceptionType)
-            </small>
-        </p>
+        <p class="text-danger"><strong>@Html.LabelFor(m => m.ExceptionType):</strong>&nbsp;@Html.DisplayFor(m => m.ExceptionType)</p>
     </div>
-
     <div class="row">
-        <p class="text-primary">
-            <small>
-                <strong>@Html.LabelFor(m => m.ExceptionMessage):</strong>&nbsp;@Html.DisplayFor(m => m.ExceptionMessage)
-            </small>
-        </p>
+        <p class="text-info"><strong>@Html.LabelFor(m => m.ExceptionMessage):</strong>&nbsp;@Html.DisplayFor(m => m.ExceptionMessage)</p>
     </div>
-
     <div class="row">
-        <p class="text-primary">
-            <small>
-                <strong>@Html.LabelFor(m => m.InnerExceptionMessage):</strong>&nbsp;@Html.DisplayFor(m => m.InnerExceptionMessage)
-            </small>
-        </p>
+        <p class="text-primary"><strong>@Html.LabelFor(m => m.InnerExceptionMessage):</strong>&nbsp;@Html.DisplayFor(m => m.InnerExceptionMessage)</p>
     </div>
 </div>                             

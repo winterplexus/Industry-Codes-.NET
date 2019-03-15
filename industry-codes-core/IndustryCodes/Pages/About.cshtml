@@ -4,28 +4,23 @@
     ViewData["Title"] = "About";
 }
 
-<h3>@ViewData["Title"]</h3>
+<br />
+<h4>@ViewData["Title"]</h4>
 
 <div class="jumbotron">
-    <div class="row">
-        <p class="text-primary">
-            <small>
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><strong>Application:</strong>&nbsp;@Model.ViewModel.Application<br />
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><strong>Description:</strong>&nbsp;@Model.ViewModel.Description<br />
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><strong>Version:</strong>&nbsp;@Model.ViewModel.Version
-            </small>
-        </p>
-    </div>
-    <div class="row">
-        <p>
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><img src="images/wiregrass.png" height="55" width="180" alt="Wiregrass Code Technology Symbol" />
-        </p>
-    </div>
-    <div class="row">
-        <p class="text-success">
-            <small>
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10">@Model.ViewModel.Copyright
-            </small>
-        </p>
-    </div>
+    <p class="text-primary">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><strong>Application:</strong>&nbsp;@Model.ViewModel.Application
+    </p>
+    <p class="text-primary">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><strong>Description:</strong>&nbsp;@Model.ViewModel.Description
+    </p>
+    <p class="text-primary">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><strong>Version:</strong>&nbsp;@Model.ViewModel.Version
+    </p>
+    <p>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><img src="~/images/wiregrass.png" height="55" width="180" alt="Wiregrass Code Technology Symbol" />
+    </p>
+    <p class="text-success">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10">@Model.ViewModel.Copyright
+    </p>
 </div>         

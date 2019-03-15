@@ -4,20 +4,19 @@
     ViewData["Title"] = "Home";
 }
 
+<section id="messages">
+    @Html.ValidationMessage("ErrorMessage")
+</section>
+
+<br />
 <div class="jumbotron">
-    <div class="row">
-        <p>
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><img src="images/industry_symbol.jpg" alt="Industry Symbol" width="100" height="80" />
-        </p>
-    </div>
-    <div class="row">
-        <p class="text-info">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10">Industry Codes
-        </p>
-    </div>
-    <div class="row">
-        <p class="text-success">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><small>NAICS/SIC Codes Search Application</small>
-        </p>
-    </div>
+    <p>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10"><img src="~/images/industry_symbol.jpg" alt="Industry Symbol" width="100" height="80" />
+    </p>
+    <p class="text-info lead">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10">Industry Codes
+    </p>
+    <p class="text-success">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Spacer" width="10">NAICS/SIC Codes Search Application
+    </p>
 </div>

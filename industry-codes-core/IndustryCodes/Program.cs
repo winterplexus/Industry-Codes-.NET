@@ -1,7 +1,7 @@
 ﻿//
 //  Program.cs
 //
-//  Copyright (c) Wiregrass Code Technology 2018
+//  Copyright (c) Wiregrass Code Technology 2018-2019
 //
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;

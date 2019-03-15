@@ -1,7 +1,7 @@
 //
 //  Startup.cs
 //
-//  Copyright (c) Wiregrass Code Technology 2018
+//  Copyright (c) Wiregrass Code Technology 2018-2019
 //
 using System;
 using Microsoft.AspNetCore.Builder;
@@ -48,14 +48,22 @@ namespace IndustryCodes
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(CustomExceptionFilterAttribute));
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             var connectionString = Configuration.GetConnectionString("IndustryCodesDatabase");
 
             services.AddDbContext<IndustryCodesContext>(options => options.UseSqlServer(connectionString));
+
+            services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.AddConfiguration(Configuration.GetSection("Logging"));
+                loggingBuilder.AddConsole();
+                loggingBuilder.AddDebug();
+                loggingBuilder.AddEventSourceLogger();
+            });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -81,10 +89,6 @@ namespace IndustryCodes
             app.UseStaticFiles();
             app.UseSession();
             app.UseMvcWithDefaultRoute();
-
-            var logLevel = Configuration.GetSection("Logging:LogLevel").GetValue<LogLevel>("Default");
-
-            loggerFactory.AddDebug(logLevel);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿//
 //  IndustrySubsector.cs
 //
-//  Copyright (c) Wiregrass Code Technology 2018
+//  Copyright (c) Wiregrass Code Technology 2018-2019
 //
 namespace IndustryCodes.ViewModels
 {

@@ -1,7 +1,7 @@
 ﻿//
 //  SearchByKeywordViewModel.cs
 //
-//  Copyright (c) Wiregrass Code Technology 2018
+//  Copyright (c) Wiregrass Code Technology 2018-2019
 //
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

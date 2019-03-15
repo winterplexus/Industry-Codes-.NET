@@ -1,7 +1,7 @@
 ﻿//
 //  About.cshtml.cs
 //
-//  Copyright (c) Wiregrass Code Technology 2018
+//  Copyright (c) Wiregrass Code Technology 2018-2019
 //   
 using IndustryCodes.ViewModels;
 using Microsoft.AspNetCore.Mvc;

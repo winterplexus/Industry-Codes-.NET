@@ -1,60 +1,37 @@
-﻿@{
+﻿@using System.Runtime.CompilerServices
+@{
     var viewModel = ViewData["ViewModel"] as IndustryCodes.ViewModels.ErrorViewModel;
 }
 
+<br />
 <h3>Application Error</h3>
 
 <div class="jumbotron">
     @if (!string.IsNullOrEmpty(viewModel?.ExceptionName))
     {
-
         <div class="row">
-            <p class="text-danger">
-                <small>
-                    <label class="control-label">Exception Name</label>:&nbsp;
-                    @viewModel.ExceptionName
-                </small>
-            </p>
+            <p class="text-danger"><strong><label asp-for="@viewModel.ExceptionName"></label>:</strong>&nbsp;@viewModel.ExceptionName</p>
         </div>
         <div class="row">
-            <p class="text-primary">
-                <small>
-                    <label class="control-label">Exception Message</label>:&nbsp;
-                    @viewModel.ExceptionMessage
-                </small>
-            </p>
+            <p class="text-info"><strong><label asp-for="@viewModel.ExceptionMessage"></label>:</strong>&nbsp;@viewModel.ExceptionMessage</p>
         </div>
         if (!string.IsNullOrEmpty(viewModel?.ExceptionSourceMessage))
         {
             <div class="row">
-                <p class="text-primary">
-                    <small>
-                        <label class="control-label">Exception Source Message</label>:&nbsp;
-                        @viewModel.ExceptionSourceMessage
-                    </small>
-                </p>
+                <p class="text-primary"><strong><label asp-for="@viewModel.ExceptionSourceMessage"></label>:</strong>&nbsp;@viewModel.ExceptionSourceMessage</p>
             </div>
         }
         if (!string.IsNullOrEmpty(viewModel?.RequestId))
         {
             <div class="row">
-                <p class="text-primary">
-                    <small>
-                        <label class="control-label">Request ID</label>:&nbsp;
-                        @viewModel.RequestId
-                    </small>
-                </p>
+                <p class="text-primary"><strong><label asp-for=" @viewModel.RequestId"></label>:</strong>&nbsp;@viewModel.RequestId</p>
             </div>
         }
     }
     else
     {
         <div class="row">
-            <p class="text-primary">
-                <small>
-                    Unknow exception
-                </small>
-            </p>
+            <p class="text-danger">Unknow exception</p>
         </div>
     }
 </div>
