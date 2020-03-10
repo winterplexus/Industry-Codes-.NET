@@ -1,5 +1,5 @@
-dot-net-industry-codes
-----------------------
+Industry Codes Applications for .NET/.NET Core
+----------------------------------------------
 
 Industry codes applications based on .NET Core and .NET Framework platforms.
 
